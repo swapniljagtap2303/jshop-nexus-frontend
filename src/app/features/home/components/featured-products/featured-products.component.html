@@ -1,0 +1,26 @@
+<section class="featured-products">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <h2>
+        Featured Products
+      </h2>
+
+      <p>
+        Discover our most popular products
+      </p>
+
+    </div>
+
+    <div class="products-grid">
+
+      <app-product-card *ngFor="let product of products; trackBy: trackByProduct" [product]="product">
+      </app-product-card>
+
+    </div>
+
+  </div>
+
+</section>

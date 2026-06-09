@@ -1,1 +1,68 @@
-<p>navbar works!</p>
+<nav class="navbar-custom">
+
+  <div class="container-fluid navbar-wrapper">
+
+    <!-- Logo -->
+    <div class="logo" routerLink="/">
+      JShop Nexus
+    </div>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+
+      <li routerLink="/">
+        Home
+      </li>
+
+      <li routerLink="/products">
+        Products
+      </li>
+
+      <li>
+        Categories
+      </li>
+
+      <li>
+        Offers
+      </li>
+
+    </ul>
+
+    <!-- Search -->
+    <div class="search-box">
+
+      <i class="bi bi-search"></i>
+
+      <input
+        type="text"
+        placeholder="Search products..."
+      />
+
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+
+      <div class="icon-box">
+        <i class="bi bi-heart"></i>
+      </div>
+
+      <div class="icon-box">
+
+        <i class="bi bi-cart3"></i>
+
+        <span class="badge-count">
+          2
+        </span>
+
+      </div>
+
+      <div class="icon-box">
+        <i class="bi bi-person"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>

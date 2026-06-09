@@ -1,1 +1,37 @@
-<p>seller-layout works!</p>
+<div class="seller-layout">
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      JShop Seller
+    </div>
+
+    <ul>
+
+      <li routerLink="/seller/dashboard">
+        Dashboard
+      </li>
+
+      <li routerLink="/seller/products">
+        Products
+      </li>
+
+      <li routerLink="/seller/orders">
+        Orders
+      </li>
+
+      <li routerLink="/seller/analytics">
+        Analytics
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <section class="content">
+
+    <router-outlet></router-outlet>
+
+  </section>
+
+</div>

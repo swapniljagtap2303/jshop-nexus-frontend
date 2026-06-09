@@ -1,0 +1,33 @@
+<section class="testimonials">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      What Our Customers Say
+    </h2>
+
+    <div class="testimonial-grid">
+
+      <div
+        class="testimonial-card"
+        *ngFor="let item of testimonials">
+
+        <div class="stars">
+          ⭐⭐⭐⭐⭐
+        </div>
+
+        <p>
+          {{ item.review }}
+        </p>
+
+        <h4>
+          {{ item.name }}
+        </h4>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
