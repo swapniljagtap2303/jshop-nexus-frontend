@@ -1,26 +1,36 @@
-<section class="featured-products">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <h2>
-        Featured Products
-      </h2>
-
-      <p>
-        Discover our most popular products
-      </p>
-
-    </div>
-
-    <div class="products-grid">
-
-      <app-product-card *ngFor="let product of products; trackBy: trackByProduct" [product]="product">
-      </app-product-card>
-
-    </div>
-
+<section class="fp">
+  <div class="fp-head">
+    <h2>Featured Products</h2>
+    <p>Handpicked top deals just for you — best prices, best brands</p>
   </div>
-
+  <div class="pgrid">
+    <div class="pcard" *ngFor="let p of products; trackBy: trackByProduct" (click)="onProductClick(p)">
+      <div class="img-wrap">
+        <img [src]="p.imageUrls[0]" [alt]="p.name" loading="lazy"
+             (error)="onImgError($event)" />
+        <div class="disc-tag">{{ getDiscount(p) }}% OFF</div>
+        <button class="wish" aria-label="Wishlist">
+          <i class="ti ti-heart"></i>
+        </button>
+      </div>
+      <div class="pinfo">
+        <div class="pname">{{ p.name }}</div>
+        <div class="pdesc">{{ p.description }}</div>
+        <div class="stars">
+          <div class="star-pill">
+            <i class="ti ti-star-filled"></i> 4.8
+          </div>
+          <span class="star-count">10,000+ ratings</span>
+        </div>
+        <div class="price-row">
+          <span class="price-now">₹{{ p.discountPrice | number }}</span>
+          <span class="price-old">₹{{ p.price | number }}</span>
+          <span class="price-save">Save ₹{{ (p.price - p.discountPrice) | number }}</span>
+        </div>
+      </div>
+      <button class="add-btn">
+        <i class="ti ti-shopping-cart"></i> Add to Cart
+      </button>
+    </div>
+  </div>
 </section>

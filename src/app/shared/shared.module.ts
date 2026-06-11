@@ -11,6 +11,8 @@ import { CategoryCardComponent } from './components/category-card/category-card.
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -30,7 +32,9 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ],
   exports: [
     NavbarComponent,

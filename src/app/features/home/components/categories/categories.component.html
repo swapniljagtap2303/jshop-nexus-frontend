@@ -1,39 +1,18 @@
-<section class="categories">
-
-  <div class="container">
-
-    <h2 class="section-title">
-      Shop By Category
-    </h2>
-
-    <div class="category-grid">
-
-      <div class="category-card">
-        📱 Mobiles
-      </div>
-
-      <div class="category-card">
-        💻 Laptops
-      </div>
-
-      <div class="category-card">
-        👕 Fashion
-      </div>
-
-      <div class="category-card">
-        🎧 Electronics
-      </div>
-
-      <div class="category-card">
-        🎮 Gaming
-      </div>
-
-      <div class="category-card">
-        📚 Books
-      </div>
-
-    </div>
-
+<section class="sec">
+  <div class="sec-head">
+    <h2>Shop by Category</h2>
+    <p>Explore top deals across all categories</p>
   </div>
-
+  <div class="grid">
+    <div class="card" *ngFor="let cat of categories" (click)="onCategoryClick(cat)">
+      <span class="badge" *ngIf="cat.badge" [ngClass]="cat.badgeClass">{{ cat.badge }}</span>
+      <div class="icon-wrap" [style.background]="cat.iconBg">
+        <i [class]="'bi ' + cat.icon" [style.color]="cat.iconColor"></i>
+      </div>
+      <div>
+        <div class="card-label">{{ cat.name }}</div>
+        <div class="card-sub">{{ cat.count }}</div>
+      </div>
+    </div>
+  </div>
 </section>

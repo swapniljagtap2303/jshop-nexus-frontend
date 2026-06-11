@@ -1,68 +1,106 @@
 <nav class="navbar-custom">
-
   <div class="container-fluid navbar-wrapper">
 
-    <!-- Logo -->
-    <div class="logo" routerLink="/">
-      JShop Nexus
+    <!-- Mobile Hamburger -->
+    <div class="mobile-menu-btn">
+      <button class="hamburger" (click)="openDrawer()">
+        <i class="bi bi-list"></i>
+      </button>
     </div>
 
-    <!-- Menu -->
-    <ul class="nav-links">
-
-      <li routerLink="/">
-        Home
-      </li>
-
-      <li routerLink="/products">
-        Products
-      </li>
-
-      <li>
-        Categories
-      </li>
-
-      <li>
-        Offers
-      </li>
-
-    </ul>
+    <!-- Logo -->
+    <div class="logo" routerLink="/">JShop Nexus</div>
 
     <!-- Search -->
     <div class="search-box">
-
       <i class="bi bi-search"></i>
-
-      <input
-        type="text"
-        placeholder="Search products..."
-      />
-
+      <input type="text" [placeholder]="currentPlaceholder" />
     </div>
+
+    <!-- Desktop Nav Links -->
+    <ul class="nav-links">
+      <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</li>
+      <li routerLink="/products" routerLinkActive="active">Products</li>
+      <li>Categories</li>
+      <li>Offers</li>
+    </ul>
+
 
     <!-- Actions -->
     <div class="actions">
-
       <div class="icon-box">
         <i class="bi bi-heart"></i>
       </div>
-
       <div class="icon-box">
-
         <i class="bi bi-cart3"></i>
-
-        <span class="badge-count">
-          2
-        </span>
-
+        <span class="badge-count">2</span>
       </div>
+      <div class="divider"></div>
+      <button class="signin-btn">
+        <i class="bi bi-person"></i>
+        Sign In
+      </button>
+    </div>
+
+    <!-- Mobile: cart + hamburger -->
+    <div class="mobile-actions">
 
       <div class="icon-box">
-        <i class="bi bi-person"></i>
+        <i class="bi bi-cart3"></i>
+        <span class="badge-count">2</span>
       </div>
 
     </div>
 
   </div>
-
 </nav>
+
+<!-- Drawer Overlay -->
+<div class="drawer-overlay" [class.open]="drawerOpen" (click)="closeDrawer()"></div>
+
+<!-- Mobile Drawer -->
+<div class="drawer" [class.open]="drawerOpen">
+
+  <div class="drawer-header">
+    <div class="drawer-logo">JShop Nexus</div>
+    <button class="drawer-close" (click)="closeDrawer()" aria-label="Close menu">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+
+
+  <ul class="drawer-nav">
+    <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeDrawer()">
+      <i class="bi bi-house-door"></i> Home
+    </li>
+    <li routerLink="/products" routerLinkActive="active" (click)="closeDrawer()">
+      <i class="bi bi-grid"></i> Products
+    </li>
+    <li (click)="closeDrawer()">
+      <i class="bi bi-tag"></i> Categories
+    </li>
+    <li (click)="closeDrawer()">
+      <i class="bi bi-percent"></i> Offers
+    </li>
+  </ul>
+
+  <div class="drawer-divider"></div>
+
+  <ul class="drawer-nav">
+    <li (click)="closeDrawer()">
+      <i class="bi bi-heart"></i> Wishlist
+    </li>
+    <li (click)="closeDrawer()">
+      <i class="bi bi-cart3"></i> Cart
+      <span class="drawer-badge">2</span>
+    </li>
+  </ul>
+
+  <div class="drawer-divider"></div>
+
+  <button class="drawer-signin" (click)="closeDrawer()">
+    <i class="bi bi-person"></i> Sign In
+  </button>
+
+</div>

@@ -1,4 +1,7 @@
+/// <reference types="jasmine" />
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -8,7 +11,8 @@ describe('NavbarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NavbarComponent]
+      declarations: [NavbarComponent],
+      imports: [RouterTestingModule]
     });
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;

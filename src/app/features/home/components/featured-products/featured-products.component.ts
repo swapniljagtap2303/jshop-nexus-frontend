@@ -62,4 +62,16 @@ export class FeaturedProductsComponent {
   trackByProduct(_: number, product: ProductCardItem): string {
     return product.name;
   }
+
+  getDiscount(p: ProductCardItem): number {
+  return Math.round(((p.price - p.discountPrice) / p.price) * 100);
+}
+
+onProductClick(p: ProductCardItem): void {
+  console.log('Clicked:', p.name);
+}
+
+onImgError(event: Event): void {
+  (event.target as HTMLImageElement).style.display = 'none';
+}
 }
